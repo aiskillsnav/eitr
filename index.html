@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Let's Talk About the Elephant</title>
+	<script>
+		(() => {
+			const param = new URLSearchParams(window.location.search).get("scoutTheme");
+			const theme =
+				param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+			document.documentElement.setAttribute("data-theme", theme);
+		})();
+	</script>
+	<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+	<main class="page-shell">
+		<header class="top-nav">
+			<div class="menu-left">
+				<button class="menu-btn" type="button" aria-label="Open menu">|||</button>
+			</div>
+			<nav class="nav-links" aria-label="Main navigation">
+				<a href="#">All Episodes</a>
+				<a href="#">Who Is the Elephant</a>
+				<a href="#">Meet the Characters</a>
+				<a href="#">Learn More</a>
+				<a href="#">Microskilling</a>
+			</nav>
+			<div class="menu-right">
+				<button class="arrow-btn" type="button" aria-label="Previous">&lt;</button>
+				<button class="arrow-btn" type="button" aria-label="Next">&gt;</button>
+			</div>
+		</header>
+
+		<section class="hero">
+			<div class="hero-browser-layer" aria-hidden="true"></div>
+			<div class="hero-pane-strip" aria-hidden="true"></div>
+			<div class="phone-stage">
+				<div class="phone" aria-label="Video preview in phone frame">
+					<div class="notch"></div>
+					<div class="person-placeholder">Video hero placeholder</div>
+					<div class="play-btn" role="button" aria-label="Play video"></div>
+				</div>
+			</div>
+
+			<div class="hero-copy">
+				<p class="kicker">Let's talk about the</p>
+				<h1 class="display"><img class="display-logo" src="Images/Asset 1SS_306090.png" alt="Elephant In The Room" /></h1>
+				<p class="tagline">Five People. Five Careers. One Very Large Elephant.</p>
+				<p class="subline">See how they stopped fearing AI and started using it.</p>
+				<div class="socials" aria-label="Social media links">
+					<a class="social-dot" href="#" aria-label="Instagram">IG</a>
+					<a class="social-dot" href="#" aria-label="TikTok">TT</a>
+				</div>
+			</div>
+		</section>
+
+		<div class="lower-frame">
+			<section class="characters">
+				<h2 class="section-title">Which One's You?</h2>
+				<div class="character-row">
+					<article class="character" data-persona="gerald" role="button" tabindex="0" aria-pressed="false">
+						<div class="avatar"><img class="avatar-photo" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Gerald profile photo" /></div>
+						<p class="character-name">Gerald</p>
+						<p class="character-role">IT Manager</p>
+					</article>
+					<article class="character" data-persona="shae" role="button" tabindex="0" aria-pressed="false">
+						<div class="avatar"><img class="avatar-photo" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Shae profile photo" /></div>
+						<p class="character-name">Shae</p>
+						<p class="character-role">Business Leader</p>
+					</article>
+					<article class="character" data-persona="keith" role="button" tabindex="0" aria-pressed="false">
+						<div class="avatar"><img class="avatar-photo" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Keith profile photo" /></div>
+						<p class="character-name">Keith</p>
+						<p class="character-role">Student/Athlete</p>
+					</article>
+					<article class="character" data-persona="izzy" role="button" tabindex="0" aria-pressed="false">
+						<div class="avatar"><img class="avatar-photo" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Izzy profile photo" /></div>
+						<p class="character-name">Izzy</p>
+						<p class="character-role">IT Professional</p>
+					</article>
+					<article class="character active" data-persona="glenn" role="button" tabindex="0" aria-pressed="true">
+						<div class="avatar"><img class="avatar-photo" src="https://randomuser.me/api/portraits/men/67.jpg" alt="Glenn profile photo" /></div>
+						<p class="character-name">Glenn</p>
+						<p class="character-role">Sales Professional</p>
+					</article>
+				</div>
+			</section>
+
+			<section class="content">
+				<p class="recommend">Recommended AI Skills Navigator Playlist:<br /><strong>Sell Smarter with AI</strong></p>
+				<div id="paths-root"></div>
+			</section>
+		</div>
+	</main>
+	<script>
+		(() => {
+			const personas = {
+				gerald: {
+					playlist: "Secure and Scale IT with AI",
+					paths: [
+						{
+							title: "Role Foundations",
+							description: "Build practical AI habits for service desk triage, documentation, and IT request handling.",
+							cards: [
+								{ meta: "Applied Skills - 35 mins", title: "Summarize tickets with Copilot", description: "Turn long issue threads into concise status updates and next-step plans." },
+								{ meta: "YouTube Video - 4 mins", title: "Draft better incident notes", description: "Use structured prompts to create faster, clearer post-incident recaps." },
+								{ meta: "Learning Path - 2 hrs 40 mins", title: "Automate repetitive IT tasks", description: "Reduce manual admin work across onboarding, reporting, and routine maintenance." },
+								{ meta: "Interactive - 20 mins", title: "Build a triage workflow", description: "Design a lightweight triage flow that routes and prioritizes tickets with AI support." }
+							]
+						},
+						{
+							title: "Role Proficiency",
+							description: "Move from one-off prompts to repeatable agent workflows for IT operations.",
+							cards: [
+								{ meta: "YouTube Video - 6 mins", title: "Standardize escalation guidance", description: "Create reusable escalation playbooks for common infrastructure events." },
+								{ meta: "Applied Skills - 40 mins", title: "Create a runbook copilot", description: "Convert long runbooks into guided, task-based assistant flows." },
+								{ meta: "Learning Path - 3 hrs 10 mins", title: "Improve root-cause analysis", description: "Use AI-assisted pattern spotting to reduce recurring incidents." },
+								{ meta: "Interactive - 18 mins", title: "Model your on-call dashboard", description: "Design a single view for alerts, ownership, and incident status." }
+							]
+						},
+						{
+							title: "Role Expertise",
+							description: "Lead safe AI adoption in IT with governance, reliability, and measurable outcomes.",
+							cards: [
+								{ meta: "LinkedIn Learning - 28 mins", title: "Responsible AI for IT leaders", description: "Set controls and guardrails while enabling rapid experimentation." },
+								{ meta: "Learning Path - 2 hrs 55 mins", title: "Modernize IT knowledge systems", description: "Turn fragmented docs into a searchable, maintainable AI-ready knowledge base." },
+								{ meta: "YouTube Video - 7 mins", title: "Measure support performance with AI", description: "Track resolution quality and speed using practical benchmark metrics." },
+								{ meta: "Interactive - 15 mins", title: "Roadmap AI ops maturity", description: "Create a 90-day maturity plan for team capability, tooling, and governance." }
+							]
+						}
+					]
+				},
+				shae: {
+					playlist: "Lead Teams with Confident AI Decisions",
+					paths: [
+						{
+							title: "Role Foundations",
+							description: "Use AI to improve strategic planning, communication, and decision quality.",
+							cards: [
+								{ meta: "Learning Path - 2 hrs 20 mins", title: "Frame stronger business questions", description: "Translate ambiguous goals into clear, testable prompts and decisions." },
+								{ meta: "YouTube Video - 3 mins", title: "Summarize executive updates", description: "Generate concise weekly briefs tailored for stakeholders." },
+								{ meta: "Applied Skills - 25 mins", title: "Draft strategic narratives", description: "Build persuasive, data-informed narratives for change initiatives." },
+								{ meta: "Interactive - 14 mins", title: "Map team priorities", description: "Use AI to balance impact, effort, and urgency in your planning cycle." }
+							]
+						},
+						{
+							title: "Role Proficiency",
+							description: "Operationalize AI into recurring leadership rhythms and team execution.",
+							cards: [
+								{ meta: "YouTube Video - 5 mins", title: "Coach with AI-prepared 1:1s", description: "Generate focused coaching agendas from project and performance signals." },
+								{ meta: "Learning Path - 3 hrs 05 mins", title: "Drive cross-functional alignment", description: "Use shared AI workspaces to align teams on goals and dependencies." },
+								{ meta: "Applied Skills - 45 mins", title: "Prioritize roadmap tradeoffs", description: "Test decision scenarios quickly before committing resources." },
+								{ meta: "Interactive - 16 mins", title: "Build an operating cadence", description: "Create repeatable review loops for forecasting, blockers, and risk decisions." }
+							]
+						},
+						{
+							title: "Role Expertise",
+							description: "Shape responsible AI culture with transparency, accountability, and adoption metrics.",
+							cards: [
+								{ meta: "LinkedIn Learning - 31 mins", title: "Executive AI communication", description: "Communicate AI strategy clearly to boards, leaders, and operational teams." },
+								{ meta: "Learning Path - 2 hrs 48 mins", title: "Govern AI decision quality", description: "Define checks for evidence, bias, and consistency in high-impact decisions." },
+								{ meta: "YouTube Video - 6 mins", title: "Adoption scorecard design", description: "Track utilization, quality, and business impact across departments." },
+								{ meta: "Interactive - 12 mins", title: "Plan leadership enablement", description: "Create an adoption plan for managers at different AI maturity levels." }
+							]
+						}
+					]
+				},
+				keith: {
+					playlist: "Study Faster and Perform Better with AI",
+					paths: [
+						{
+							title: "Role Foundations",
+							description: "Learn practical AI workflows for class prep, time management, and communication.",
+							cards: [
+								{ meta: "YouTube Video - 3 mins", title: "Break readings into study notes", description: "Convert long readings into concise summaries and flashcard prompts." },
+								{ meta: "Applied Skills - 22 mins", title: "Build a weekly planner", description: "Use AI to map coursework, training blocks, and deadlines in one schedule." },
+								{ meta: "Learning Path - 1 hr 55 mins", title: "Write clearer assignments", description: "Improve structure, argument flow, and revision quality with AI feedback." },
+								{ meta: "Interactive - 10 mins", title: "Set game-day routines", description: "Create consistent pre- and post-performance reflection templates." }
+							]
+						},
+						{
+							title: "Role Proficiency",
+							description: "Use AI to train smarter, reflect faster, and improve execution under pressure.",
+							cards: [
+								{ meta: "YouTube Video - 4 mins", title: "Analyze practice sessions", description: "Turn notes and stats into actionable practice focus points." },
+								{ meta: "Learning Path - 2 hrs 30 mins", title: "Presentation and communication skills", description: "Use AI rehearsal tools to improve delivery for class and team contexts." },
+								{ meta: "Applied Skills - 28 mins", title: "Build feedback loops", description: "Capture coach and instructor feedback in a structured improvement system." },
+								{ meta: "Interactive - 15 mins", title: "Plan recovery windows", description: "Balance workload, rest, and deadlines with adaptive planning prompts." }
+							]
+						},
+						{
+							title: "Role Expertise",
+							description: "Develop long-term AI literacy for career growth and ethical tool use.",
+							cards: [
+								{ meta: "LinkedIn Learning - 24 mins", title: "Responsible AI habits for students", description: "Use AI ethically while maintaining originality and academic integrity." },
+								{ meta: "YouTube Video - 5 mins", title: "Build your professional profile", description: "Create stronger resumes and bios with evidence-based career storytelling." },
+								{ meta: "Learning Path - 2 hrs 15 mins", title: "Career readiness with AI", description: "Practice interview prep, role research, and networking communication." },
+								{ meta: "Interactive - 12 mins", title: "Map next-semester goals", description: "Set measurable growth goals for academics, athletics, and career prep." }
+							]
+						}
+					]
+				},
+				izzy: {
+					playlist: "Engineer Better Systems with AI",
+					paths: [
+						{
+							title: "Role Foundations",
+							description: "Apply AI to debugging, documentation, and code quality improvements.",
+							cards: [
+								{ meta: "Applied Skills - 34 mins", title: "Write cleaner technical docs", description: "Generate maintainable docs from code context and architecture notes." },
+								{ meta: "YouTube Video - 4 mins", title: "Prompt for safer refactors", description: "Use AI to propose small, testable code changes with rollback confidence." },
+								{ meta: "Learning Path - 2 hrs 42 mins", title: "Accelerate code reviews", description: "Build a rubric for faster review cycles and higher signal feedback." },
+								{ meta: "Interactive - 17 mins", title: "Create a debug playbook", description: "Standardize diagnosis patterns for recurring defects and incidents." }
+							]
+						},
+						{
+							title: "Role Proficiency",
+							description: "Move to advanced AI-assisted engineering workflows and automation patterns.",
+							cards: [
+								{ meta: "YouTube Video - 6 mins", title: "Test generation with guardrails", description: "Generate edge-case-focused tests while preserving meaningful assertions." },
+								{ meta: "Applied Skills - 38 mins", title: "Automate integration checks", description: "Use AI to create repeatable pre-merge validation routines." },
+								{ meta: "Learning Path - 3 hrs 20 mins", title: "Design resilient architecture", description: "Explore tradeoffs and failure modes with AI-assisted design prompts." },
+								{ meta: "Interactive - 16 mins", title: "Plan technical debt sprints", description: "Prioritize debt reduction by impact, risk, and implementation effort." }
+							]
+						},
+						{
+							title: "Role Expertise",
+							description: "Build AI engineering leadership with governance and scalable standards.",
+							cards: [
+								{ meta: "LinkedIn Learning - 29 mins", title: "Engineering governance with AI", description: "Set standards for quality, privacy, and reliability in AI-assisted code." },
+								{ meta: "Learning Path - 2 hrs 58 mins", title: "Lead AI-ready platform teams", description: "Scale reusable patterns across teams with clear ownership models." },
+								{ meta: "YouTube Video - 7 mins", title: "Measure development velocity", description: "Track where AI creates real delivery gains versus noise." },
+								{ meta: "Interactive - 13 mins", title: "Set a code quality charter", description: "Define non-negotiable quality gates for AI-assisted development." }
+							]
+						}
+					]
+				},
+				glenn: {
+					playlist: "Sell Smarter with AI",
+					paths: [
+						{
+							title: "Role Foundations",
+							description: "Learn how to use generative AI to optimize sales prospecting, customer communication, and presentation.",
+							cards: [
+								{ meta: "Applied Skills - 30 mins", title: "Streamline workflow with AI chat", description: "Microsoft Applied Skills learning path for practical communication support." },
+								{ meta: "YouTube Video - 2 mins", title: "Update messaging for new audiences", description: "Tailor one message to different sales personas with Copilot." },
+								{ meta: "YouTube Video - 2 mins", title: "Enhance your sales dashboard", description: "Build a sales trend chart with Copilot and focus on key actions." },
+								{ meta: "Learning Path - 3 hrs", title: "Work smarter with AI", description: "A guided, practical path to use AI tools in daily sales routines." }
+							]
+						},
+						{
+							title: "Role Proficiency",
+							description: "Learn how to apply agentic workflows to build and execute your sales strategy.",
+							cards: [
+								{ meta: "YouTube Video - 5 mins", title: "Turn raw data into insights", description: "Move from spreadsheet clutter to actionable weekly planning." },
+								{ meta: "YouTube Video - 2 mins", title: "Design a customer sequence", description: "Create a reusable re-engagement sequence powered by Copilot." },
+								{ meta: "Learning Path - 3 hrs 52 mins", title: "Transform daily business process", description: "Implement agent workflows that reduce repetitive manual steps." },
+								{ meta: "Interactive - 15 mins", title: "Build your sales command center", description: "Connect tasks, notes, and follow-ups into one operating dashboard." }
+							]
+						},
+						{
+							title: "Role Expertise",
+							description: "Build fluency in AI principles that help facilitate organizational change.",
+							cards: [
+								{ meta: "LinkedIn Learning - 26 mins", title: "Adaptability mindset in the age of AI", description: "Lead from uncertainty to action with resilient communication habits." },
+								{ meta: "LinkedIn Learning - 39 mins", title: "Leading responsible AI in organizations", description: "Practical decision patterns for balancing speed, risk, and trust." },
+								{ meta: "LinkedIn Learning - 23 mins", title: "Responsible AI for managers", description: "Build team rituals for thoughtful AI usage and measurable outcomes." },
+								{ meta: "LinkedIn Learning - 18 mins", title: "Integrating AI into business strategy", description: "Translate AI capability into strategic value and competitive advantage." }
+							]
+						}
+					]
+				}
+			};
+
+			const personaCards = Array.from(document.querySelectorAll(".character[data-persona]"));
+			const playlistStrong = document.querySelector(".recommend strong");
+			const pathsRoot = document.getElementById("paths-root");
+
+			if (!personaCards.length || !playlistStrong || !pathsRoot) {
+				return;
+			}
+
+			function renderCards(cards, container) {
+				cards.forEach((item) => {
+					const card = document.createElement("article");
+					card.className = "card";
+
+					const thumb = document.createElement("div");
+					thumb.className = "thumb";
+					card.appendChild(thumb);
+
+					const meta = document.createElement("em");
+					meta.textContent = item.meta;
+					card.appendChild(meta);
+
+					const title = document.createElement("h4");
+					title.className = "card-title";
+					title.textContent = item.title;
+					card.appendChild(title);
+
+					const desc = document.createElement("p");
+					desc.className = "card-desc";
+					desc.textContent = item.description;
+					card.appendChild(desc);
+
+					container.appendChild(card);
+				});
+			}
+
+			function renderPaths(paths) {
+				pathsRoot.textContent = "";
+				paths.forEach((pathItem) => {
+					const section = document.createElement("section");
+					section.className = "path";
+
+					const heading = document.createElement("h3");
+					heading.textContent = pathItem.title;
+					section.appendChild(heading);
+
+					const desc = document.createElement("p");
+					desc.textContent = pathItem.description;
+					section.appendChild(desc);
+
+					const grid = document.createElement("div");
+					grid.className = "card-grid";
+					renderCards(pathItem.cards, grid);
+					section.appendChild(grid);
+
+					pathsRoot.appendChild(section);
+				});
+			}
+
+			function setActivePersona(personaId) {
+				const data = personas[personaId];
+				if (!data) {
+					return;
+				}
+
+				personaCards.forEach((card) => {
+					const isActive = card.dataset.persona === personaId;
+					card.classList.toggle("active", isActive);
+					card.classList.toggle("is-active", isActive);
+					card.setAttribute("aria-pressed", isActive ? "true" : "false");
+				});
+
+				playlistStrong.textContent = data.playlist;
+				renderPaths(data.paths);
+			}
+
+			personaCards.forEach((card) => {
+				card.addEventListener("click", () => {
+					setActivePersona(card.dataset.persona);
+				});
+
+				card.addEventListener("keydown", (event) => {
+					if (event.key === "Enter" || event.key === " ") {
+						event.preventDefault();
+						setActivePersona(card.dataset.persona);
+					}
+				});
+			});
+
+			setActivePersona("glenn");
+		})();
+	</script>
+</body>
+</html>
