@@ -110,8 +110,12 @@ a {
   padding: 0 0.9rem;
   z-index: 7;
   border-radius: 16px 16px 0 0;
-  background: linear-gradient(180deg, var(--cp-surface), var(--cp-bg-elevated));
-  border-bottom: 1px solid color-mix(in srgb, var(--cp-text) 12%, transparent);
+  background: linear-gradient(
+    180deg,
+    var(--cp-ocean-text),
+    color-mix(in srgb, var(--cp-ocean-text) 86%, var(--cp-ocean-soft) 14%)
+  );
+  border-bottom: 1px solid color-mix(in srgb, var(--cp-ocean-deep) 12%, transparent);
 }
 
 .menu-left,
