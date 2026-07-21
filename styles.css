@@ -626,12 +626,25 @@ a {
 }
 
 .card {
+  display: block;
   min-height: auto;
   border-radius: 12px;
   border: 1px solid color-mix(in srgb, var(--cp-ocean-text) 18%, transparent);
   background: color-mix(in srgb, var(--cp-ocean-deep) 76%, var(--cp-ocean-soft) 24%);
   padding: 0.6rem;
   box-shadow: 0 0 2px rgba(0,0,0,0.22), 0 1px 2px rgba(0,0,0,0.2);
+}
+
+a.card {
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+
+a.card:hover,
+a.card:focus-visible {
+  border-color: color-mix(in srgb, var(--cp-warning) 70%, transparent);
+  transform: translateY(-2px);
 }
 
 .thumb {
@@ -641,6 +654,14 @@ a {
   border: 1px solid var(--cp-border);
   background:
     linear-gradient(130deg, color-mix(in srgb, var(--cp-link) 20%, var(--cp-surface) 80%), color-mix(in srgb, var(--cp-warning) 20%, var(--cp-surface) 80%));
+  overflow: hidden;
+}
+
+.thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card em {

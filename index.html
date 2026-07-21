@@ -108,7 +108,7 @@
 							title: "Role Foundations",
 							description: "Build practical AI habits for service desk triage, documentation, and IT request handling.",
 							cards: [
-								{ meta: "Applied Skills - 35 mins", title: "Summarize tickets with Copilot", description: "Turn long issue threads into concise status updates and next-step plans." },
+								{ meta: "AI Skills Navigator - Video", title: "Agents in Microsoft Intune", description: "Automate device and security policy management with Intune agents, policy drafts, change review, and remediation guidance.", href: "https://aiskillsnavigator.microsoft.com/explore/search/video-b31382f2aa0606f35a648957e7b6203b2398a7e28b1e0f45dbfedc8eec042595", thumbnail: "https://i.ytimg.com/vi/V7dlyoXzEE4/hqdefault.jpg" },
 								{ meta: "YouTube Video - 4 mins", title: "Draft better incident notes", description: "Use structured prompts to create faster, clearer post-incident recaps." },
 								{ meta: "Learning Path - 2 hrs 40 mins", title: "Automate repetitive IT tasks", description: "Reduce manual admin work across onboarding, reporting, and routine maintenance." },
 								{ meta: "Interactive - 20 mins", title: "Build a triage workflow", description: "Design a lightweight triage flow that routes and prioritizes tickets with AI support." }
@@ -288,11 +288,24 @@
 
 			function renderCards(cards, container) {
 				cards.forEach((item) => {
-					const card = document.createElement("article");
+					const card = document.createElement(item.href ? "a" : "article");
 					card.className = "card";
+					if (item.href) {
+						card.href = item.href;
+						card.target = "_blank";
+						card.rel = "noopener noreferrer";
+						card.setAttribute("aria-label", `${item.title} on AI Skills Navigator`);
+					}
 
 					const thumb = document.createElement("div");
 					thumb.className = "thumb";
+					if (item.thumbnail) {
+						const image = document.createElement("img");
+						image.src = item.thumbnail;
+						image.alt = "";
+						image.loading = "lazy";
+						thumb.appendChild(image);
+					}
 					card.appendChild(thumb);
 
 					const meta = document.createElement("em");
