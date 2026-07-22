@@ -4,7 +4,37 @@
 	<meta charset="UTF-8" />
 	<link rel="icon" type="image/x-icon" href="favicon.ico" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Let's Talk About the Elephant</title>
+  <meta name="description" content="Elephant In The Room — A Microsoft AI Skills Navigator series. Five people. Five careers. One very large elephant." />
+  <meta property="og:title" content="Elephant In The Room | AI Skills Navigator" />
+  <meta property="og:description" content="Elephant In The Room — A Microsoft AI Skills Navigator series. Five people. Five careers. One very large elephant." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://aiskillsnavigator.microsoft.com/eitr/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Microsoft" />
+  <meta property="og:image" content="Images/eitr-logo.png" />
+  <meta name="twitter:image" content="Images/eitr-logo.png" />
+	<title>Elephant In The Room | AI Skills Navigator</title>
+
+  <!-- Microsoft Clarity analytics -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+      y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window,document,"clarity","script","ttqwpbrhaw");
+  </script>
+
+  <!-- Microsoft WCP Cookie Consent -->
+  <script src="https://wcpstatic.microsoft.com/mscc/lib/v2/wcp-consent.js"></script>
+  <script>
+    window.onload = function() {
+      if (typeof WcpConsent !== 'undefined') {
+        WcpConsent.init('en-US', 'cookie-banner', function(err, _siteConsent) {
+          if (!err) { window.siteConsent = _siteConsent; }
+        });
+      }
+    };
+  </script>
 	<script>
 		(() => {
 			const param = new URLSearchParams(window.location.search).get("scoutTheme");
@@ -16,8 +46,11 @@
 	<link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-	<main class="page-shell">
-		<header class="top-nav hero-nav">
+  <div id="cookie-banner"></div>
+  <a class="skip-nav" href="#main-content">Skip to main content</a>
+
+<main id="main-content" class="page-shell">
+		<header class="top-nav hero-nav" role="banner">
 			<div class="menu-left">
 				<button class="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav" onclick="var n=document.getElementById('main-nav');var open=n.classList.toggle('open');this.setAttribute('aria-expanded',open);">
 					<span></span><span></span><span></span>
@@ -94,7 +127,7 @@
 
 			<section class="content">
 				<p class="recommend">Recommended AI Skills Navigator Playlist:<br /><strong>Sell Smarter with AI</strong></p>
-				<div id="paths-root"></div>
+				<div id="paths-root" aria-live="polite" aria-atomic="true"></div>
 			</section>
 		</div>
 	</main>
@@ -382,5 +415,22 @@
 			setActivePersona("gerald");
 		})();
 	</script>
+  <footer class="ms-footer" role="contentinfo" aria-label="Microsoft footer">
+    <nav style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;font-size:0.72rem;font-family:'Segoe UI',system-ui,sans-serif;">
+      <div style="display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;">
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Your Privacy Choices</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Consumer Health Privacy</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;">
+        <a href="https://support.microsoft.com/contactus" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Contact Microsoft</a>
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Privacy</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Terms of use</a>
+        <a href="https://www.microsoft.com/trademarks" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Trademarks</a>
+        <a href="https://www.microsoft.com/en-us/legal/compliance/recycling" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Recycling</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkId=248395" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">About our ads</a>
+        <span style="color:#888;white-space:nowrap;">&copy; Microsoft <script>document.write(new Date().getFullYear())</script></span>
+      </div>
+    </nav>
+  </footer>
 </body>
 </html>

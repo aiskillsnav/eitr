@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Not Found | Elephant In The Room</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .error-page {
+      min-height: 60vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(180deg, var(--cp-ocean-soft), var(--cp-ocean-deep));
+    }
+    .error-code {
+      font-family: Impact, "Arial Narrow Bold", sans-serif;
+      font-size: clamp(5rem, 20vw, 10rem);
+      color: color-mix(in srgb, var(--cp-warning) 80%, var(--cp-text) 20%);
+      line-height: 1;
+      margin: 0;
+    }
+    .error-msg {
+      color: var(--cp-ocean-text);
+      font-size: 1.4rem;
+      margin: 1rem 0 2rem;
+    }
+    .error-cta {
+      display: inline-block;
+      padding: 0.7rem 1.8rem;
+      background: var(--cp-accent);
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .error-cta:hover { background: var(--cp-accent-hover); }
+  </style>
+</head>
+<body>
+  <div id="cookie-banner"></div>
+  <main class="page-shell">
+    <header class="top-nav">
+      <div class="menu-left"></div>
+      <nav class="nav-links" id="main-nav" aria-label="Main navigation">
+        <a href="all-episodes.html">All Episodes</a>
+        <a href="who-is-the-elephant.html">Who Is the Elephant</a>
+        <a href="meet-the-characters.html">Meet the Characters</a>
+        <a href="learn-more.html">Learn More</a>
+        <a href="microskilling.html">Microskilling</a>
+      </nav>
+      <div class="menu-right"></div>
+    </header>
+
+    <section class="error-page">
+      <p class="error-code">404</p>
+      <p class="error-msg">This page got lost in the room.</p>
+      <a href="index.html" class="error-cta">Back to Home</a>
+    </section>
+  </main>
+
+  <footer class="ms-footer" role="contentinfo" aria-label="Microsoft footer">
+    <nav style="display:flex;flex-direction:row;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;font-size:0.72rem;font-family:'Segoe UI',system-ui,sans-serif;">
+      <div style="display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;">
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Your Privacy Choices</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkId=521839" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Consumer Health Privacy</a>
+      </div>
+      <div style="display:flex;align-items:center;gap:1.6rem;flex-wrap:wrap;">
+        <a href="https://support.microsoft.com/contactus" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Contact Microsoft</a>
+        <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Privacy</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkID=206977" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Terms of use</a>
+        <a href="https://www.microsoft.com/trademarks" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Trademarks</a>
+        <a href="https://www.microsoft.com/en-us/legal/compliance/recycling" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">Recycling</a>
+        <a href="https://go.microsoft.com/fwlink/?LinkId=248395" target="_blank" rel="noopener" style="color:#c8c8c8;text-decoration:none;white-space:nowrap;">About our ads</a>
+        <span style="color:#888;white-space:nowrap;">&copy; Microsoft <script>document.write(new Date().getFullYear())</script></span>
+      </div>
+    </nav>
+  </footer>
+</body>
+</html>

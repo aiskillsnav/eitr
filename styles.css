@@ -333,12 +333,12 @@ a {
   font-size: 1.72rem;
   color: var(--cp-ocean-deep);
   font-style: italic;
-  font-weight: 600;
+  font-weight: 700;
   width: auto;
   max-width: min(560px, 96%);
   text-align: center;
   display: block;
-  text-shadow: 0 1px 6px rgba(255,255,255,0.5);
+  text-shadow: 0 1px 8px rgba(255,255,255,0.8), 0 0 24px rgba(255,255,255,0.5);
 }
 
 .display {
@@ -1105,4 +1105,76 @@ a.card:focus-visible {
   .card-grid {
     grid-template-columns: repeat(4, minmax(210px, 1fr));
   }
+}
+
+ Microsoft  */Compliance Footer /* 
+.ms-footer {
+  background: #171717;
+  color: #c8c8c8;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 0.72rem;
+  padding: 1rem 3rem;
+  margin-top: 4rem;
+  border-top: 1px solid #303030;
+}
+@media (max-width: 760px) {
+  .ms-footer { padding: 1.2rem 1.5rem; margin-top: 2rem; }
+  .ms-footer nav { flex-direction: column !important; align-items: flex-start !important; gap: 1rem !important; }
+}
+
+ WCAG 2.1  */AA Accessibility /* 
+
+/* Skip navigation link */
+.skip-nav {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 9999;
+  background: #fff;
+  color: #000;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  text-decoration: none;
+  border: 2px solid #000;
+  transition: top 0.1s;
+}
+.skip-nav:focus {
+  top: 0;
+}
+
+/* Focus visible styles for keyboard nav */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #0078d4;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Character cards focus */
+.character:focus-visible {
+  outline: 3px solid #0078d4;
+  outline-offset: 6px;
+  border-radius: 50%;
+}
+
+/* Ensure inactive persona text meets contrast on dark bg */
+.character:not(.active):not(.is-active) .character-name {
+  color: rgba(242, 247, 251, 0.85);
+}
+.character:not(.active):not(.is-active) .character-role {
+  color: rgba(242, 247, 251, 0.70);
+}
+
+/* Fix card meta text contrast (#5c5c5c is  boost to #595959 min) */borderline 
+.card em {
+  color: #595959;
+}
+
+/* Hero kicker contrast over photo background */
+.kicker {
+  text-shadow: 0 1px 8px rgba(255,255,255,0.6), 0 0 20px rgba(255,255,255,0.3);
 }
