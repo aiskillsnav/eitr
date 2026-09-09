@@ -12,8 +12,8 @@
   <meta property="og:url" content="https://aiskillsnavigator.microsoft.com/eitr/" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@Microsoft" />
-  <meta property="og:image" content="Images/eitr-logo.png" />
-  <meta name="twitter:image" content="Images/eitr-logo.png" />
+  <meta property="og:image" content="Images/v2-eitr-logo.png" />
+  <meta name="twitter:image" content="Images/v2-eitr-logo.png" />
 	<title>All Episodes | Elephant In The Room | AI Skills Navigator</title>
 
   <!-- Microsoft Clarity analytics -->
@@ -156,6 +156,7 @@
 			display: flex;
 			align-items: flex-end;
 			padding: 0.85rem;
+			overflow: hidden;
 		}
 		.ep-thumb-ep1 { background: linear-gradient(135deg, #0a3d5c 0%, #0d7a8a 100%); }
 		.ep-thumb-ep2 { background: linear-gradient(135deg, #38106a 0%, #7a2d94 100%); }
@@ -170,6 +171,16 @@
 			inset: 0;
 			background: radial-gradient(ellipse at 30% 40%, rgba(255,255,255,0.12) 0%, transparent 65%);
 			pointer-events: none;
+		}
+		.ep-thumb img {
+			position: absolute;
+			right: 0.75rem;
+			bottom: 0.35rem;
+			width: 116px;
+			height: 116px;
+			object-fit: contain;
+			z-index: 1;
+			filter: drop-shadow(0 10px 22px rgba(0,0,0,0.32));
 		}
 		.ep-badge {
 			position: relative;
@@ -266,77 +277,82 @@
 			<h2 class="section-title">Watch the Series</h2>
 			<div class="episodes-grid">
 
-				<article class="ep-card">
+				<article class="ep-card" id="glenn">
 					<div class="ep-thumb ep-thumb-ep1">
+						<img src="Images/v2-persona-glenn.png" alt="" />
 						<span class="ep-badge">EP 01</span>
 					</div>
 					<div class="ep-body">
-						<p class="ep-character">Gerald &middot; IT Manager</p>
-						<h3 class="ep-title">The Ticket Avalanche</h3>
-						<p class="ep-desc">When a system outage floods his queue with 400+ tickets, Gerald's team is drowning. Reluctantly, he tries AI triage — and can't believe what happens next.</p>
+						<p class="ep-character">Glenn &middot; Accountant</p>
+						<h3 class="ep-title">The Frosty Boy Pitch</h3>
+						<p class="ep-desc">Glenn, an accountant at a paint company, has a shot at landing Frosty Boy, a beloved ice cream-and-burger chain, but time is running out to build the pitch. Can he use AI to paint a winning picture, or will things get messy?</p>
 						<div class="ep-footer">
-							<span class="ep-duration">&#9201; 22 min</span>
-							<a href="meet-the-characters.html#gerald" class="cta-btn">Watch Episode</a>
+							<span class="ep-duration">Coming soon</span>
+							<a href="meet-the-characters.html#glenn" class="cta-btn">Watch Glenn</a>
 						</div>
 					</div>
 				</article>
 
-				<article class="ep-card">
+				<article class="ep-card" id="shae">
 					<div class="ep-thumb ep-thumb-ep2">
+						<img src="Images/v2-persona-shae.png" alt="" />
 						<span class="ep-badge">EP 02</span>
 					</div>
 					<div class="ep-body">
-						<p class="ep-character">Shae &middot; Business Leader</p>
-						<h3 class="ep-title">The Strategy Room</h3>
-						<p class="ep-desc">Shae's board presentation is 48 hours away and her data tells three different stories. She needs clarity fast, but she doesn't trust AI to touch her work.</p>
+						<p class="ep-character">Shae &middot; Marketing Director</p>
+						<h3 class="ep-title">The Big Idea</h3>
+						<p class="ep-desc">Shae must launch a new product while defending a shrinking marketing budget. Can AI strengthen her big idea without taking away what makes it hers?</p>
 						<div class="ep-footer">
-							<span class="ep-duration">&#9201; 19 min</span>
-							<a href="meet-the-characters.html#shae" class="cta-btn">Watch Episode</a>
+							<span class="ep-duration">Coming soon</span>
+							<a href="meet-the-characters.html#shae" class="cta-btn">Watch Shae</a>
 						</div>
 					</div>
 				</article>
 
-				<article class="ep-card">
+				<article class="ep-card" id="gerald">
 					<div class="ep-thumb ep-thumb-ep3">
+						<img src="Images/v2-persona-gerald.png" alt="" />
 						<span class="ep-badge">EP 03</span>
 					</div>
 					<div class="ep-body">
-						<p class="ep-character">Keith &middot; Student/Athlete</p>
-						<h3 class="ep-title">Double Coverage</h3>
-						<p class="ep-desc">Finals week collides with playoff season. Keith is failing both until a teammate shows him a studying system he never expected.</p>
+						<p class="ep-character">Gerald &middot; IT Manager</p>
+						<h3 class="ep-title">The TinDin Question</h3>
+						<p class="ep-desc">Gerald helped build TinDin into a fast-growing tinned-fish business, but he worries expansion and AI could cost it the human touch. Can he embrace AI without opening a new can of worms, or sardines?</p>
 						<div class="ep-footer">
-							<span class="ep-duration">&#9201; 17 min</span>
-							<a href="meet-the-characters.html#keith" class="cta-btn">Watch Episode</a>
+							<span class="ep-duration">Coming soon</span>
+							<a href="meet-the-characters.html#gerald" class="cta-btn">Watch Gerald</a>
 						</div>
 					</div>
 				</article>
 
-				<article class="ep-card">
+				<article class="ep-card" id="izzy">
 					<div class="ep-thumb ep-thumb-ep4">
+						<img src="Images/v2-persona-izzy.png" alt="" />
 						<span class="ep-badge">EP 04</span>
 					</div>
 					<div class="ep-body">
-						<p class="ep-character">Izzy &middot; IT Professional</p>
-						<h3 class="ep-title">The Code Review</h3>
-						<p class="ep-desc">Izzy's team is two sprints behind and her lead is asking why. The answer involves a refactor she's been avoiding — and an AI tool she doesn't yet trust.</p>
+						<p class="ep-character">Izzy &middot; Developer</p>
+						<h3 class="ep-title">The Pull Request Flood</h3>
+						<p class="ep-desc">Izzy is leading a high-pressure app integration as AI-generated code and pull requests flood her queue. Can AI help her catch up, or is she already too far behind the curve?</p>
 						<div class="ep-footer">
-							<span class="ep-duration">&#9201; 24 min</span>
-							<a href="meet-the-characters.html#izzy" class="cta-btn">Watch Episode</a>
+							<span class="ep-duration">Coming soon</span>
+							<a href="meet-the-characters.html#izzy" class="cta-btn">Watch Izzy</a>
 						</div>
 					</div>
 				</article>
 
-				<article class="ep-card">
+				<article class="ep-card" id="keith">
 					<div class="ep-thumb ep-thumb-ep5">
+						<img src="Images/v2-persona-keith.png" alt="" />
 						<span class="ep-badge">EP 05</span>
 					</div>
 					<div class="ep-body">
-						<p class="ep-character">Glenn &middot; Sales Professional</p>
-						<h3 class="ep-title">The Cold Call</h3>
-						<p class="ep-desc">Glenn's close rate is the lowest it's been in six years. After a brutal pipeline review, he decides to try one thing differently.</p>
+						<p class="ep-character">Keith &middot; Student/Athlete</p>
+						<h3 class="ep-title">The New Game Plan</h3>
+						<p class="ep-desc">Keith has two months to declare a major and find a future beyond tennis. Can AI help him create a new game plan and find a career that will still be there when he graduates?</p>
 						<div class="ep-footer">
-							<span class="ep-duration">&#9201; 21 min</span>
-							<a href="meet-the-characters.html#glenn" class="cta-btn">Watch Episode</a>
+							<span class="ep-duration">Coming soon</span>
+							<a href="meet-the-characters.html#keith" class="cta-btn">Watch Keith</a>
 						</div>
 					</div>
 				</article>
