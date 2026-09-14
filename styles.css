@@ -1,4 +1,6 @@
 /* Copyright (c) Microsoft Corporation. Licensed under the MIT License. */
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap");
+
 :root {
   color-scheme: light;
   --hero-bg-focus-x: 50%;
@@ -437,6 +439,10 @@ a {
   text-transform: uppercase;
   padding-right: 1.2rem;
   line-height: 0.88;
+}
+
+.characters > .section-title {
+  font-family: "Oswald", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .character-row {
