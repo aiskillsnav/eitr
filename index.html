@@ -56,6 +56,7 @@
 			<div class="hero-pane-strip" aria-hidden="true"></div>
 			<div class="phone-stage">
 				<div class="phone" aria-label="Video preview in phone frame">
+					<img class="phone-art" src="Images/v3-phone-isolated.png" alt="" aria-hidden="true" />
 					<div class="notch"></div>
 					<div class="person-placeholder">Video hero placeholder</div>
 					<div class="play-btn" role="button" aria-label="Play video"></div>
@@ -341,9 +342,7 @@
 			});
 
 			const requestedPersona = window.location.hash.replace("#", "");
-			if (personas[requestedPersona]) {
-				setActivePersona(requestedPersona);
-			}
+			setActivePersona(personas[requestedPersona] ? requestedPersona : "glenn");
 		})();
 	</script>
   <footer class="ms-footer" role="contentinfo" aria-label="Microsoft footer">
